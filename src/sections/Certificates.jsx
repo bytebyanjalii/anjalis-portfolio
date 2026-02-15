@@ -7,15 +7,15 @@ export default function Certificates() {
       certificates: [
         {
           title: 'AI-Powered Full-Stack Development Internship',
-          link: 'https://drive.google.com/file/d/1eVymNpYwAfKkLl9VhKj18hg9d-ERxsnK/view',
+          image: '/Images/certificates/AI-Powered Full-Stack Development Internship.jpg',
         },
         {
           title: 'Computer Vision & Deep Learning Internship',
-          link: 'https://drive.google.com/file/d/1QCydGSLHrpFKFnaMk6npw59_YLXRnjVh/view',
+          image: '/Images/certificates/Computer Vision & Deep Learning Internship.jpg',
         },
         {
           title: 'Python & Machine Learning Internship',
-          link: 'https://drive.google.com/file/d/1EAHGz3Q-tkYwST_ifUM2Lg4RPSAhL6Wc/view',
+          image: '/Images/certificates/Python & Machine Learning Internship.jpg',
         },
       ],
     },
@@ -23,12 +23,12 @@ export default function Certificates() {
       category: 'Courses & Online Learning Certificates',
       certificates: [
         {
-          title: 'Data Science Specialization',
-          link: 'https://drive.google.com/file/d/1OWIZkuHPvGH274_DPO4UW33DTucF-HA3/view',
+          title: 'Data Structure and Algorithms in C++ – Udemy',
+          image: '/Images/certificates/Data Structure and Algorithms in C++ certificate by Udemy.jpg',
         },
         {
-          title: 'Machine Learning with Python',
-          link: 'https://drive.google.com/file/d/1QVPqe_ounB86yppePXCn6KeN44aJ1wCH/view',
+          title: 'Oracle Cloud Infrastructure – AI Foundations Associate (2025)',
+          image: '/Images/certificates/Oracle Cloud Infrastructure – AI Foundations Associate (2025).jpg',
         },
       ],
     },
@@ -36,16 +36,20 @@ export default function Certificates() {
       category: 'NPTEL Certifications',
       certificates: [
         {
-          title: 'The Joy of Computing using Python',
-          link: 'https://drive.google.com/file/d/1kLjhTDS-Xnf24hay9Zs6kc_2Pu2x0L6F/view',
+          title: 'Developing Soft Skills and Personality',
+          image: '/Images/certificates/Developing Soft Skills And Personality.jpg',
         },
         {
-          title: 'Introduction to Data Science',
-          link: 'https://drive.google.com/file/d/1tOpPyDF5kzrnRiHT1DmWX9Jp6fKxaApn/view',
+          title: 'Soft Skill Development',
+          image: '/Images/certificates/Soft Skill Development.jpg',
         },
       ],
     },
   ]
+
+  const handleCertificateClick = (image) => {
+    window.open(image, '_blank')
+  }
 
   return (
     <SectionWrapper style={{ backgroundColor: '#F7F3EE' }}>
@@ -68,29 +72,40 @@ export default function Certificates() {
             </h3>
 
             {/* Certificate Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {group.certificates.map((cert, certIdx) => (
                 <div
                   key={certIdx}
-                  className="p-5 rounded-lg soft-shadow transition-smooth hover-lift"
-                  style={{ backgroundColor: '#F7F3EE', border: '1px solid #E6A6B0' }}
+                  className="cursor-pointer rounded-lg overflow-hidden soft-shadow transition-smooth"
+                  style={{
+                    transform: 'scale(1)',
+                    transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.05)'
+                    e.currentTarget.style.boxShadow = '0 12px 24px rgba(139, 90, 43, 0.2)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)'
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)'
+                  }}
+                  onClick={() => handleCertificateClick(cert.image)}
                 >
-                  <h4 className="font-semibold mb-4" style={{ fontFamily: "'Inter', sans-serif", color: '#8B5A2B' }}>
-                    {cert.title}
-                  </h4>
+                  {/* Certificate Image */}
+                  <div className="w-full h-64 bg-gray-200 overflow-hidden">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-                  {/* View Certificate Button */}
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 rounded-md text-sm font-medium transition-smooth"
-                    style={{ backgroundColor: '#8B5A2B', color: 'white' }}
-                    onMouseOver={(e) => (e.target.style.opacity = '0.85')}
-                    onMouseOut={(e) => (e.target.style.opacity = '1')}
-                  >
-                    View Certificate
-                  </a>
+                  {/* Certificate Title */}
+                  <div className="p-4" style={{ backgroundColor: '#F7F3EE' }}>
+                    <p className="text-sm font-semibold text-center" style={{ color: '#8B5A2B' }}>
+                      {cert.title}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
