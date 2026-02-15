@@ -3,10 +3,59 @@ import Tag from '../components/Tag'
 
 export default function Skills() {
   const skillGroups = {
-    'Programming': ['Python', 'JavaScript', 'SQL', 'Java', 'R'],
-    'Machine Learning': ['TensorFlow', 'PyTorch', 'scikit-learn', 'XGBoost', 'Pandas', 'NumPy'],
-    'Deep Learning': ['CNNs', 'RNNs', 'Transformers', 'GANs', 'Transfer Learning'],
-    'Tools & Platforms': ['Git', 'Docker', 'AWS', 'Google Cloud', 'Jupyter', 'REST APIs'],
+    'Data Science & Analytics': [
+      'Data Cleaning & Preprocessing',
+      'Exploratory Data Analysis (EDA)',
+      'Feature Engineering',
+      'Statistical Analysis',
+      'Data Visualization',
+      'Business Insights from Data',
+      'Hypothesis Testing',
+    ],
+    'Machine Learning & AI': [
+      'Supervised & Unsupervised Learning',
+      'Model Training & Evaluation',
+      'Regression & Classification',
+      'Clustering Techniques',
+      'Model Optimization & Tuning',
+      'Deep Learning Fundamentals',
+      'Computer Vision Basics',
+      'NLP Fundamentals',
+    ],
+    'Programming & Development': [
+      'Python Programming',
+      'ML Pipeline Development',
+      'End-to-End Project Building',
+      'API Integration',
+      'Full-Stack ML Applications',
+      'Model Deployment Concepts',
+    ],
+    'Data Science & ML Tools': [
+      'Python',
+      'NumPy',
+      'Pandas',
+      'Matplotlib',
+      'Seaborn',
+      'Scikit-learn',
+      'TensorFlow',
+      'PyTorch',
+      'OpenCV',
+      'NLTK / spaCy',
+    ],
+    'Dev & Deployment Tools': [
+      'Git & GitHub',
+      'Jupyter Notebook',
+      'VS Code',
+      'Streamlit',
+      'Flask',
+      'FastAPI',
+      'Docker (basic)',
+    ],
+    'Databases & Data Tools': [
+      'MySQL',
+      'MongoDB',
+      'CSV / Excel Data Handling',
+    ],
   }
 
   return (
@@ -15,7 +64,7 @@ export default function Skills() {
         Technical Skills
       </h2>
       <p className="mb-12 text-base" style={{ color: '#4a4a4a' }}>
-        A comprehensive toolkit for data science and AI engineering
+        My comprehensive Data Science, AI & ML expertise
       </p>
 
       <div className="space-y-10">
