@@ -8,7 +8,7 @@ import Publications from "./sections/Publications";
 
 function App() {
   return (
-    <div className="bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-slate-950 text-slate-100">
       <Hero />
       <About />
       <Education />
