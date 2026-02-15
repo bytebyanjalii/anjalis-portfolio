@@ -38,7 +38,7 @@ export default function Contact() {
 
         <div className="pt-12" style={{ borderTop: '1px solid #E6A6B0' }}>
           <p className="text-sm" style={{ color: '#8B5A2B', opacity: 0.7 }}>
-            © 2025 Anjali's Portfolio. Crafted with care.
+            © 2026 Anjali's Portfolio. Crafted with care.
           </p>
         </div>
       </div>
