@@ -1,19 +1,37 @@
-const Skills = () => {
+import SectionWrapper from '../components/SectionWrapper'
+import Tag from '../components/Tag'
+
+export default function Skills() {
+  const skillGroups = {
+    'Programming': ['Python', 'JavaScript', 'SQL', 'Java', 'R'],
+    'Machine Learning': ['TensorFlow', 'PyTorch', 'scikit-learn', 'XGBoost', 'Pandas', 'NumPy'],
+    'Deep Learning': ['CNNs', 'RNNs', 'Transformers', 'GANs', 'Transfer Learning'],
+    'Tools & Platforms': ['Git', 'Docker', 'AWS', 'Google Cloud', 'Jupyter', 'REST APIs'],
+  }
+
   return (
-    <section id="skills" className="section">
-      <h2>Skills</h2>
+    <SectionWrapper className="bg-white">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Technical Skills
+      </h2>
+      <p className="text-gray-600 mb-12 text-lg">
+        A comprehensive toolkit for data science and AI engineering
+      </p>
 
-      <ul>
-        <li><strong>Programming:</strong> Python, C++, JavaScript</li>
-        <li><strong>Data Science:</strong> Pandas, NumPy, Matplotlib, Seaborn</li>
-        <li><strong>Machine Learning:</strong> Regression, Classification, Clustering</li>
-        <li><strong>Deep Learning:</strong> CNN, RNN, LSTM, Transformers</li>
-        <li><strong>NLP:</strong> Text Preprocessing, TF-IDF, Word Embeddings</li>
-        <li><strong>Web:</strong> React, HTML, CSS, Tailwind</li>
-        <li><strong>Tools:</strong> Git, GitHub, Jupyter, VS Code</li>
-      </ul>
-    </section>
-  );
-};
-
-export default Skills;
+      <div className="space-y-10">
+        {Object.entries(skillGroups).map(([group, skills]) => (
+          <div key={group}>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">{group}</h3>
+            <div className="flex flex-wrap gap-3">
+              {skills.map((skill) => (
+                <Tag key={skill} variant="default">
+                  {skill}
+                </Tag>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </SectionWrapper>
+  )
+}

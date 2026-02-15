@@ -1,23 +1,23 @@
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Education from "./sections/Education";
-import Skills from "./sections/Skills";
-import Experience from "./sections/Experience";
-import Projects from "./sections/Projects";
-import Publications from "./sections/Publications";
+import Hero from './sections/Hero'
+import About from './sections/About'
+import EducationExperience from './sections/EducationExperience'
+import Skills from './sections/Skills'
+import Projects from './sections/Projects'
+import Publications from './sections/Publications'
+import Contact from './sections/Contact'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-amber-50 text-gray-900">
       <Hero />
       <About />
-      <Education />
+      <EducationExperience />
       <Skills />
-      <Experience />
       <Projects />
       <Publications />
+      <Contact />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
