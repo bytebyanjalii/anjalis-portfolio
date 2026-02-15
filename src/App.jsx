@@ -1,7 +1,6 @@
 import Hero from './sections/Hero'
 import About from './sections/About'
 import Resume from './sections/Resume'
-import EducationExperience from './sections/EducationExperience'
 import Skills from './sections/Skills'
 import Projects from './sections/Projects'
 import Publications from './sections/Publications'
@@ -13,7 +12,6 @@ function App() {
       <Hero />
       <About />
       <Resume />
-      <EducationExperience />
       <Skills />
       <Projects />
       <Publications />
