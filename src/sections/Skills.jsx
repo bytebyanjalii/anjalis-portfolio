@@ -10,18 +10,18 @@ export default function Skills() {
   }
 
   return (
-    <SectionWrapper className="bg-white">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+    <SectionWrapper className="bg-stone-50" style={{ backgroundColor: '#F7F3EE' }}>
+      <h2 className="text-5xl md:text-6xl font-black mb-4" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
         Technical Skills
       </h2>
-      <p className="text-gray-600 mb-12 text-lg">
+      <p className="mb-12 text-base" style={{ color: '#4a4a4a' }}>
         A comprehensive toolkit for data science and AI engineering
       </p>
 
       <div className="space-y-10">
         {Object.entries(skillGroups).map(([group, skills]) => (
           <div key={group}>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">{group}</h3>
+            <h3 className="text-xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif", color: '#8B5A2B', fontSize: '1.25rem' }}>{group}</h3>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <Tag key={skill} variant="default">

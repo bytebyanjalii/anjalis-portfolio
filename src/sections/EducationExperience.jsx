@@ -45,8 +45,8 @@ export default function EducationExperience() {
   ]
 
   return (
-    <SectionWrapper className="bg-amber-50">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16">
+    <SectionWrapper className="bg-stone-50" style={{ backgroundColor: '#F7F3EE' }}>
+      <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-16" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
         Experience
       </h2>
       

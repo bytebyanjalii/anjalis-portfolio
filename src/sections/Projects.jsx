@@ -42,11 +42,11 @@ export default function Projects() {
   ]
 
   return (
-    <SectionWrapper className="bg-amber-50">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+    <SectionWrapper className="bg-stone-50" style={{ backgroundColor: '#F7F3EE' }}>
+      <h2 className="text-5xl md:text-6xl font-black mb-4" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
         Featured Projects
       </h2>
-      <p className="text-gray-600 mb-12 text-lg">
+      <p className="mb-12 text-base" style={{ color: '#4a4a4a' }}>
         Scroll horizontally to explore my recent work
       </p>
 

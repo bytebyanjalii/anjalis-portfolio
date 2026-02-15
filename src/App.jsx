@@ -1,5 +1,6 @@
 import Hero from './sections/Hero'
 import About from './sections/About'
+import Resume from './sections/Resume'
 import EducationExperience from './sections/EducationExperience'
 import Skills from './sections/Skills'
 import Projects from './sections/Projects'
@@ -11,6 +12,7 @@ function App() {
     <div className="min-h-screen bg-amber-50 text-gray-900">
       <Hero />
       <About />
+      <Resume />
       <EducationExperience />
       <Skills />
       <Projects />

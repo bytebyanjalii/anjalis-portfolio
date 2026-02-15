@@ -2,13 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&family=Abril+Fatface&family=Patrick+Hand&display=swap');
 
 :root {
-  --color-beige: #f6f1eb;
+  --color-beige: #F7F3EE;
   --color-beige-light: #faf7f3;
   --color-beige-dark: #f3ede7;
-  --color-brown: #8b7355;
+  --color-brown: #8B5A2B;
+  --color-pink: #E6A6B0;
   --color-olive: #7a8456;
   --color-rose: #a67885;
   --color-gray: #9a9a9a;
@@ -27,7 +28,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f6f1eb;
+  background-color: var(--color-beige);
   color: var(--color-text);
   line-height: 1.6;
 }
@@ -93,6 +94,66 @@ p {
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(var(--rotation, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--rotation, 0deg));
+  }
+}
+
+.hero-title {
+  animation: fadeInDown 1s ease-out forwards;
+  font-family: 'Abril Fatface', serif;
+}
+
+.hero-subtitle {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero-name {
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  font-family: 'Caveat', cursive;
+}
+
+.hero-doodle {
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero-doodle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.hero-doodle:nth-child(3) {
+  animation-delay: 1s;
 }
 
 /* Scrollbar styling */
