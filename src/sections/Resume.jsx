@@ -72,9 +72,9 @@ export default function Resume() {
 
   return (
     <SectionWrapper className="bg-stone-50 py-20 md:py-32" style={{ backgroundColor: '#F7F3EE' }}>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-16 max-w-7xl mx-auto">
         {/* LEFT COLUMN - Contact, Education, Skills, Tools */}
-        <div className="md:col-span-5 space-y-14">
+        <div className="md:col-span-5 space-y-28">
           {/* CONTACT SECTION */}
           <div>
             <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
@@ -106,20 +106,20 @@ export default function Resume() {
 
           {/* EDUCATION SECTION */}
           <div>
-            <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+            <h3 className="text-sm font-black tracking-widest mb-10 uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
               Education
             </h3>
-            <div>
-              <p className="text-sm font-semibold leading-relaxed" style={{ color: '#8B5A2B' }}>
+            <div className="space-y-2">
+              <p className="text-base font-bold leading-relaxed" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
                 {education.degree}
               </p>
-              <p className="text-xs mt-3 leading-relaxed" style={{ color: '#4a4a4a' }}>
+              <p className="text-sm mt-4 leading-relaxed" style={{ color: '#4a4a4a' }}>
                 {education.institution}
               </p>
-              <p className="text-xs mt-2" style={{ color: '#4a4a4a', opacity: 0.7 }}>
+              <p className="text-sm mt-1" style={{ color: '#4a4a4a', opacity: 0.75 }}>
                 {education.location}
               </p>
-              <p className="text-xs font-semibold mt-4 tracking-wide uppercase" style={{ color: '#E6A6B0' }}>
+              <p className="text-xs font-bold mt-5 tracking-wider uppercase" style={{ color: '#E6A6B0', opacity: 0.8 }}>
                 {education.duration}
               </p>
             </div>
@@ -127,16 +127,22 @@ export default function Resume() {
 
           {/* SKILLS SECTION */}
           <div>
-            <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+            <h3 className="text-sm font-black tracking-widest mb-10 uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
               Skills
             </h3>
-            <div className="space-y-2">
+            <div className="flex flex-wrap gap-3">
               {skills.map((skill, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#E6A6B0' }}></span>
-                  <span className="text-sm" style={{ color: '#4a4a4a' }}>
-                    {skill}
-                  </span>
+                <div
+                  key={idx}
+                  className="px-4 py-2 rounded-full text-xs font-medium transition-transform hover:scale-105"
+                  style={{
+                    backgroundColor: '#E6A6B0',
+                    color: '#8B5A2B',
+                    transform: `rotate(${(idx % 2 === 0 ? -1.5 : 1.5)}deg)`,
+                    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.08)',
+                  }}
+                >
+                  {skill}
                 </div>
               ))}
             </div>
@@ -144,14 +150,22 @@ export default function Resume() {
 
           {/* TOOLS SECTION */}
           <div>
-            <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+            <h3 className="text-sm font-black tracking-widest mb-10 uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
               Tools
             </h3>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-4">
               {tools.map((tool, idx) => (
-                <div key={idx} className="flex flex-col items-center gap-3 hover:opacity-75 transition-opacity">
-                  <div className="text-3xl">{tool.icon}</div>
-                  <p className="text-xs text-center font-medium" style={{ color: '#8B5A2B' }}>
+                <div
+                  key={idx}
+                  className="flex flex-col items-center justify-center gap-2 p-4 rounded-2xl hover:scale-110 transition-transform"
+                  style={{
+                    backgroundColor: 'rgba(230, 166, 176, 0.15)',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+                    border: '1px solid rgba(230, 166, 176, 0.3)',
+                  }}
+                >
+                  <div className="text-4xl">{tool.icon}</div>
+                  <p className="text-xs text-center font-semibold leading-tight" style={{ color: '#8B5A2B' }}>
                     {tool.name}
                   </p>
                 </div>
@@ -161,62 +175,63 @@ export default function Resume() {
         </div>
 
         {/* CENTER TIMELINE LINE */}
-        <div className="hidden md:flex md:col-span-2 justify-center">
+        <div className="hidden md:flex md:col-span-2 justify-center relative py-0">
           <div className="relative w-full h-full flex justify-center">
             <div
-              className="absolute top-0 bottom-0 w-px"
-              style={{ backgroundColor: '#E6A6B0', opacity: 0.25 }}
+              className="absolute top-0 bottom-0 w-0.5"
+              style={{ backgroundColor: '#E6A6B0', opacity: 0.35 }}
             ></div>
           </div>
         </div>
 
         {/* RIGHT COLUMN - EXPERIENCE TIMELINE */}
         <div className="md:col-span-5">
-          <h3 className="text-xs font-bold tracking-widest mb-12 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+          <h3 className="text-sm font-black tracking-widest mb-16 uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
             Experience
           </h3>
 
           {/* Experience Timeline */}
-          <div className="relative space-y-12">
+          <div className="relative space-y-16">
             {/* Timeline line (visible on mobile below title) */}
-            <div className="md:hidden absolute left-0 top-0 bottom-0 w-px" style={{ backgroundColor: '#E6A6B0', opacity: 0.2 }}></div>
+            <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5" style={{ backgroundColor: '#E6A6B0', opacity: 0.3 }}></div>
 
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative">
-                {/* Timeline dot */}
+                {/* Timeline dot - larger and more prominent */}
                 <div
-                  className="absolute w-3 h-3 rounded-full border-2"
+                  className="absolute w-4 h-4 rounded-full border-2 transform -translate-x-1/2"
                   style={{
-                    left: '-10px',
-                    top: '4px',
+                    left: '-2px',
+                    top: '2px',
                     backgroundColor: '#F7F3EE',
                     borderColor: '#E6A6B0',
+                    boxShadow: '0 0 0 3px #F7F3EE, 0 0 0 4px #E6A6B0',
                   }}
                 ></div>
 
                 {/* Experience Content */}
-                <div className="md:ml-0 ml-6">
-                  {/* Duration (muted, top) */}
-                  <p className="text-xs tracking-wide font-semibold uppercase" style={{ color: '#E6A6B0', opacity: 0.7 }}>
+                <div className="md:ml-0 ml-8">
+                  {/* Duration (muted, subtle styling) */}
+                  <p className="text-xs tracking-wide font-bold uppercase" style={{ color: '#E6A6B0', opacity: 0.65, letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                     {exp.duration}
                   </p>
 
-                  {/* Role Title */}
-                  <p className="text-sm font-semibold mt-2 leading-snug" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
+                  {/* Role Title - BOLD and prominent */}
+                  <p className="text-lg font-bold mb-1 leading-tight" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
                     {exp.title}
                   </p>
 
-                  {/* Organization */}
-                  <p className="text-xs mt-2" style={{ color: '#4a4a4a', opacity: 0.8 }}>
+                  {/* Organization - lighter and smaller */}
+                  <p className="text-sm mb-5" style={{ color: '#4a4a4a', opacity: 0.75 }}>
                     {exp.organization}
                   </p>
 
-                  {/* Bullet Points */}
-                  <ul className="space-y-2 mt-4">
+                  {/* Bullet Points - improved spacing */}
+                  <ul className="space-y-3">
                     {exp.bullets.map((bullet, bidx) => (
-                      <li key={bidx} className="flex gap-3 text-xs leading-relaxed" style={{ color: '#4a4a4a' }}>
-                        <span className="flex-shrink-0 mt-1" style={{ color: '#E6A6B0' }}>
-                          ▬
+                      <li key={bidx} className="flex gap-3 text-sm leading-relaxed" style={{ color: '#4a4a4a' }}>
+                        <span className="flex-shrink-0 mt-1" style={{ color: '#E6A6B0', fontWeight: 'bold' }}>
+                          —
                         </span>
                         <span>{bullet}</span>
                       </li>
@@ -224,9 +239,9 @@ export default function Resume() {
                   </ul>
                 </div>
 
-                {/* Divider between experiences */}
+                {/* Divider between experiences - more subtle */}
                 {idx < experiences.length - 1 && (
-                  <div className="mt-12 pt-12 border-t" style={{ borderColor: '#E6A6B0', opacity: 0.15 }}></div>
+                  <div className="mt-16 pt-16 border-t" style={{ borderColor: '#E6A6B0', opacity: 0.2 }}></div>
                 )}
               </div>
             ))}
