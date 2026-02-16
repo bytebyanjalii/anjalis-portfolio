@@ -48,17 +48,17 @@ export default function Hero() {
 
         {/* --- CENTERED CONTENT --- */}
         <div className="relative text-center">
-          {/* Handwritten "Anjali" annotation - positioned top-left of PORTFOLIO */}
-          <div className="absolute -top-20 left-8 md:left-20 animate-float-name" style={{ '--rotation': '-2deg' }}>
-            <p className="text-xl md:text-2xl font-bold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.02em', transform: 'rotate(-2deg)' }}>
+          {/* Handwritten "Anjali" annotation - positioned near top-left of PORTFOLIO */}
+          <div className="absolute top-12 left-4 md:left-16 animate-float-name" style={{}}>
+            <p className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.02em', transform: 'rotate(-3deg)' }}>
               Anjali
             </p>
           </div>
 
-          {/* Hand-drawn curved arrow from Anjali to PORTFOLIO */}
-          <svg className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-48 md:w-64 h-40 pointer-events-none" style={{ opacity: 0.6 }} viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 60 40 Q 120 80 160 140" stroke="#E6A6B0" strokeWidth="2" strokeLinecap="round" fill="none" />
-            <path d="M 160 125 L 160 145 L 148 135" stroke="#E6A6B0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          {/* Small curved arrow from Anjali to PORTFOLIO */}
+          <svg className="absolute top-32 left-12 md:left-32 w-28 md:w-40 h-24 pointer-events-none" style={{ opacity: 0.7 }} viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 20 10 Q 50 60 110 100" stroke="#E6A6B0" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+            <path d="M 105 95 L 110 105 L 100 105" stroke="#E6A6B0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
           </svg>
 
           {/* Main title "PORTFOLIO" */}
@@ -67,9 +67,9 @@ export default function Hero() {
               PORTFOLIO
             </h1>
 
-            {/* Year annotation - positioned right side, vertically centered */}
-            <div className="absolute top-1/2 -right-24 md:-right-32 transform -translate-y-1/2 animate-float-year" style={{ '--rotation': '0deg' }}>
-              <p className="text-lg md:text-2xl font-semibold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', opacity: 0.7 }}>
+            {/* Year annotation - positioned right side, near title */}
+            <div className="absolute top-1/4 -right-16 md:-right-28 animate-float-year">
+              <p className="text-2xl md:text-3xl font-semibold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', opacity: 0.6 }}>
                 2026
               </p>
             </div>
@@ -86,14 +86,6 @@ export default function Hero() {
             <p className="relative text-base sm:text-lg md:text-xl py-3 md:py-4 px-6 md:px-8" style={{ color: '#8B5A2B', fontFamily: "'Patrick Hand', cursive", fontWeight: '500', letterSpacing: '0.01em' }}>
               Data Scientist | AI & ML Engineer
             </p>
-          </div>
-
-          {/* Scroll indicator arrow */}
-          <div className="pt-16 md:pt-20">
-            <svg className="w-6 h-6 md:w-8 md:h-8 mx-auto animate-bounce opacity-70" style={{ color: '#8B5A2B' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 50 20 L 50 70" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <path d="M 35 55 L 50 75 L 65 55" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
           </div>
         </div>
       </div>
@@ -114,10 +106,10 @@ export default function Hero() {
         /* Floating animations */
         @keyframes floatName {
           0%, 100% {
-            transform: translateY(0px) rotate(-2deg);
+            transform: translateY(0px) rotate(-3deg);
           }
           50% {
-            transform: translateY(-4px) rotate(-2deg);
+            transform: translateY(-4px) rotate(-3deg);
           }
         }
 
