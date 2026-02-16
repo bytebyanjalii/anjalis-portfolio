@@ -72,126 +72,162 @@ export default function Resume() {
 
   return (
     <SectionWrapper className="bg-stone-50 py-20 md:py-32" style={{ backgroundColor: '#F7F3EE' }}>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-        {/* LEFT COLUMN */}
-        <div className="md:col-span-1 space-y-12">
-          {/* CONTACT */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 max-w-6xl mx-auto">
+        {/* LEFT COLUMN - Contact, Education, Skills, Tools */}
+        <div className="md:col-span-5 space-y-14">
+          {/* CONTACT SECTION */}
           <div>
-            <h3 className="text-sm font-bold tracking-widest mb-6" style={{ fontFamily: "'Playfair Display', serif", color: '#8B5A2B' }}>
-              CONTACT
+            <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+              Contact
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-5">
               {contact.map((item, idx) => (
                 <div key={idx} className="text-sm">
-                  <p className="font-medium text-xs tracking-wide" style={{ color: '#8B5A2B', opacity: 0.7 }}>{item.label.toUpperCase()}</p>
+                  <p className="text-xs tracking-wide uppercase font-medium" style={{ color: '#8B5A2B', opacity: 0.6, letterSpacing: '0.08em' }}>
+                    {item.label}
+                  </p>
                   {item.href ? (
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition-colors block mt-1"
-                      style={{ color: '#8B5A2B' }}
+                      className="transition-colors block mt-2 text-sm"
+                      style={{ color: '#4a4a4a' }}
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <p className="mt-1" style={{ color: '#8B5A2B' }}>{item.value}</p>
+                    <p className="mt-2 text-sm" style={{ color: '#4a4a4a' }}>{item.value}</p>
                   )}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* EDUCATION */}
+          {/* EDUCATION SECTION */}
           <div>
-            <h3 className="text-sm font-bold tracking-widest mb-6" style={{ fontFamily: "'Playfair Display', serif", color: '#8B5A2B' }}>
-              EDUCATION
+            <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+              Education
             </h3>
-            <div className="space-y-3">
-              <div>
-                <p className="font-medium text-sm leading-relaxed" style={{ color: '#8B5A2B' }}>{education.degree}</p>
-                <p className="text-sm mt-2" style={{ color: '#4a4a4a' }}>{education.institution}</p>
-                <p className="text-xs mt-1" style={{ color: '#4a4a4a' }}>{education.location}</p>
-                <p className="text-xs font-semibold mt-2 tracking-wide" style={{ color: '#8B5A2B' }}>{education.duration}</p>
-              </div>
+            <div>
+              <p className="text-sm font-semibold leading-relaxed" style={{ color: '#8B5A2B' }}>
+                {education.degree}
+              </p>
+              <p className="text-xs mt-3 leading-relaxed" style={{ color: '#4a4a4a' }}>
+                {education.institution}
+              </p>
+              <p className="text-xs mt-2" style={{ color: '#4a4a4a', opacity: 0.7 }}>
+                {education.location}
+              </p>
+              <p className="text-xs font-semibold mt-4 tracking-wide uppercase" style={{ color: '#E6A6B0' }}>
+                {education.duration}
+              </p>
             </div>
           </div>
 
-          {/* SKILLS */}
+          {/* SKILLS SECTION */}
           <div>
-            <h3 className="text-sm font-bold tracking-widest mb-6" style={{ fontFamily: "'Playfair Display', serif", color: '#8B5A2B' }}>
-              SKILLS
+            <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+              Skills
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="space-y-2">
               {skills.map((skill, idx) => (
-                <span
-                  key={idx}
-                  className="inline-block px-3 py-1.5 text-xs font-medium rounded-full"
-                  style={{ backgroundColor: '#E6A6B0', color: '#8B5A2B' }}
-                >
-                  {skill}
-                </span>
+                <div key={idx} className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#E6A6B0' }}></span>
+                  <span className="text-sm" style={{ color: '#4a4a4a' }}>
+                    {skill}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* TOOLS */}
+          {/* TOOLS SECTION */}
           <div>
-            <h3 className="text-sm font-bold tracking-widest mb-6" style={{ fontFamily: "'Playfair Display', serif", color: '#8B5A2B' }}>
-              TOOLS
+            <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+              Tools
             </h3>
-            <div className="flex flex-wrap gap-4">
+            <div className="grid grid-cols-3 gap-6">
               {tools.map((tool, idx) => (
-                <div key={idx} className="flex flex-col items-center gap-2 cursor-pointer hover:opacity-75 transition-opacity">
-                  <div className="text-2xl">{tool.icon}</div>
-                  <p className="text-xs text-center" style={{ color: '#8B5A2B' }}>{tool.name}</p>
+                <div key={idx} className="flex flex-col items-center gap-3 hover:opacity-75 transition-opacity">
+                  <div className="text-3xl">{tool.icon}</div>
+                  <p className="text-xs text-center font-medium" style={{ color: '#8B5A2B' }}>
+                    {tool.name}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* VERTICAL DIVIDER */}
-        <div className="hidden md:block md:col-span-0">
-          <div className="h-full w-px" style={{ backgroundColor: '#E6A6B0', opacity: 0.3 }}></div>
+        {/* CENTER TIMELINE LINE */}
+        <div className="hidden md:flex md:col-span-2 justify-center">
+          <div className="relative w-full h-full flex justify-center">
+            <div
+              className="absolute top-0 bottom-0 w-px"
+              style={{ backgroundColor: '#E6A6B0', opacity: 0.25 }}
+            ></div>
+          </div>
         </div>
 
-        {/* RIGHT COLUMN - EXPERIENCE */}
-        <div className="md:col-span-1">
-          <h3 className="text-sm font-bold tracking-widest mb-8" style={{ fontFamily: "'Playfair Display', serif", color: '#8B5A2B' }}>
-            EXPERIENCE
+        {/* RIGHT COLUMN - EXPERIENCE TIMELINE */}
+        <div className="md:col-span-5">
+          <h3 className="text-xs font-bold tracking-widest mb-12 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+            Experience
           </h3>
 
-          {/* Timeline */}
-          <div className="relative space-y-8 pl-8">
-            {/* Timeline line */}
-            <div className="absolute left-0 top-0 bottom-0 w-px" style={{ backgroundColor: '#E6A6B0', opacity: 0.4 }}></div>
+          {/* Experience Timeline */}
+          <div className="relative space-y-12">
+            {/* Timeline line (visible on mobile below title) */}
+            <div className="md:hidden absolute left-0 top-0 bottom-0 w-px" style={{ backgroundColor: '#E6A6B0', opacity: 0.2 }}></div>
 
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative">
                 {/* Timeline dot */}
-                <div className="absolute -left-5 top-2 w-2 h-2 rounded-full border-2 border-white" style={{ backgroundColor: '#8B5A2B', boxShadow: '0 0 0 2px #F7F3EE' }}></div>
+                <div
+                  className="absolute w-3 h-3 rounded-full border-2"
+                  style={{
+                    left: '-10px',
+                    top: '4px',
+                    backgroundColor: '#F7F3EE',
+                    borderColor: '#E6A6B0',
+                  }}
+                ></div>
 
-                {/* Content */}
-                <div>
-                  <div className="mb-2">
-                    <p className="font-bold text-sm leading-tight" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
-                      {exp.title}
-                    </p>
-                    <p className="text-xs mt-1" style={{ color: '#4a4a4a' }}>{exp.organization}</p>
-                    <p className="text-xs font-semibold mt-1 tracking-wide" style={{ color: '#8B5A2B' }}>{exp.duration}</p>
-                  </div>
+                {/* Experience Content */}
+                <div className="md:ml-0 ml-6">
+                  {/* Duration (muted, top) */}
+                  <p className="text-xs tracking-wide font-semibold uppercase" style={{ color: '#E6A6B0', opacity: 0.7 }}>
+                    {exp.duration}
+                  </p>
 
-                  {/* Bullets */}
-                  <ul className="space-y-2 mt-3">
+                  {/* Role Title */}
+                  <p className="text-sm font-semibold mt-2 leading-snug" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
+                    {exp.title}
+                  </p>
+
+                  {/* Organization */}
+                  <p className="text-xs mt-2" style={{ color: '#4a4a4a', opacity: 0.8 }}>
+                    {exp.organization}
+                  </p>
+
+                  {/* Bullet Points */}
+                  <ul className="space-y-2 mt-4">
                     {exp.bullets.map((bullet, bidx) => (
-                      <li key={bidx} className="flex gap-2 text-xs" style={{ color: '#4a4a4a' }}>
-                        <span style={{ color: '#E6A6B0' }} className="flex-shrink-0">•</span>
+                      <li key={bidx} className="flex gap-3 text-xs leading-relaxed" style={{ color: '#4a4a4a' }}>
+                        <span className="flex-shrink-0 mt-1" style={{ color: '#E6A6B0' }}>
+                          ▬
+                        </span>
                         <span>{bullet}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
+
+                {/* Divider between experiences */}
+                {idx < experiences.length - 1 && (
+                  <div className="mt-12 pt-12 border-t" style={{ borderColor: '#E6A6B0', opacity: 0.15 }}></div>
+                )}
               </div>
             ))}
           </div>
