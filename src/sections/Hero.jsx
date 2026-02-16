@@ -1,84 +1,112 @@
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 overflow-hidden" style={{ backgroundColor: '#F7F3EE' }}>
-      {/* Background subtle noise/texture */}
-      <div className="absolute inset-0 opacity-30" style={{
+      {/* Background subtle noise texture */}
+      <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" /%3E%3C/filter%3E%3Crect width="400" height="400" fill="white" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E")',
         backgroundSize: '100px 100px'
       }}></div>
 
       {/* Main content container */}
-      <div className="relative z-10 max-w-4xl w-full">
-        {/* Decorative doodles */}
-        <svg className="absolute -top-16 -left-12 w-24 h-24 text-amber-300 hero-doodle opacity-60" style={{ '--rotation': '-15deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="2" opacity="0.3" />
-          <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
-          <path d="M 20 50 L 80 50" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
-          <path d="M 50 20 L 50 80" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
+      <div className="relative z-10 max-w-5xl w-full">
+        {/* --- DECORATIVE DOODLES --- */}
+
+        {/* Top-left circle doodle */}
+        <svg className="absolute -top-12 -left-8 w-20 h-20 text-rose-200 hero-doodle opacity-40" style={{ '--rotation': '-12deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" opacity="0.6" />
+          <circle cx="50" cy="50" r="32" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+          <circle cx="50" cy="50" r="24" stroke="currentColor" strokeWidth="1" opacity="0.3" />
         </svg>
 
-        <svg className="absolute -bottom-20 -right-16 w-32 h-32 text-pink-300 hero-doodle opacity-50" style={{ '--rotation': '20deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 50 10 L 60 40 L 90 40 L 67 60 L 77 90 L 50 70 L 23 90 L 33 60 L 10 40 L 40 40 Z" fill="currentColor" opacity="0.6" />
-          <path d="M 50 10 L 60 40 L 90 40 L 67 60 L 77 90 L 50 70 L 23 90 L 33 60 L 10 40 L 40 40 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+        {/* Top-right stars cluster */}
+        <svg className="absolute -top-6 right-0 md:right-8 w-24 h-24 text-amber-100 hero-doodle opacity-50" style={{ '--rotation': '8deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Star 1 */}
+          <path d="M 30 20 L 35 35 L 50 35 L 38 45 L 43 60 L 30 50 L 17 60 L 22 45 L 10 35 L 25 35 Z" fill="currentColor" opacity="0.5" />
+          {/* Star 2 */}
+          <path d="M 70 15 L 73 25 L 85 25 L 75 32 L 78 42 L 70 35 L 62 42 L 65 32 L 55 25 L 67 25 Z" fill="currentColor" opacity="0.4" />
+          {/* Star 3 */}
+          <path d="M 60 50 L 62 57 L 70 57 L 63 62 L 65 69 L 60 64 L 55 69 L 57 62 L 50 57 L 58 57 Z" fill="currentColor" opacity="0.35" />
         </svg>
 
-        <svg className="absolute top-1/4 -right-8 w-16 h-16 text-rose-200 hero-doodle opacity-70" style={{ '--rotation': '-10deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="8" fill="currentColor" />
-          <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
-          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-          <path d="M 50 10 L 50 20" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M 50 80 L 50 90" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M 10 50 L 20 50" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M 80 50 L 90 50" stroke="currentColor" strokeWidth="1.5" />
+        {/* Bottom-left sparkles */}
+        <svg className="absolute -bottom-16 -left-12 w-28 h-28 text-rose-100 hero-doodle opacity-40" style={{ '--rotation': '-18deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Sparkle 1 */}
+          <circle cx="25" cy="30" r="2" fill="currentColor" />
+          <path d="M 25 22 L 25 38" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+          <path d="M 17 30 L 33 30" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+          {/* Sparkle 2 */}
+          <circle cx="70" cy="60" r="2" fill="currentColor" />
+          <path d="M 70 54 L 70 66" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+          <path d="M 64 60 L 76 60" stroke="currentColor" strokeWidth="1" opacity="0.4" />
         </svg>
 
-        {/* Year annotation */}
-        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 hero-doodle opacity-70" style={{ '--rotation': '-5deg' }}>
-          <p className="text-2xl font-bold text-amber-900" style={{ fontFamily: "'Caveat', cursive" }}>2026</p>
-        </div>
+        {/* Bottom-right curved arrow */}
+        <svg className="absolute bottom-0 -right-4 md:right-12 w-20 h-20 text-amber-100 hero-doodle opacity-45" style={{ '--rotation': '15deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 20 70 Q 40 30 70 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+          <path d="M 65 10 L 70 20 L 60 25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        </svg>
 
-        {/* Center content */}
-        <div className="text-center space-y-8">
-          {/* Handwritten name annotation */}
-          <div className="relative inline-block w-full">
-            <p className="text-xl md:text-2xl hero-name" style={{ fontFamily: "'Caveat', cursive", color: '#8B5A2B', letterSpacing: '0.05em' }}>
-              Hey, I'm Anjali 👋
+        {/* --- CENTERED CONTENT --- */}
+        <div className="text-center space-y-6 md:space-y-8">
+          {/* Handwritten "Anjali" annotation with arrow */}
+          <div className="relative flex flex-col items-center gap-2 mb-4">
+            <p className="text-lg md:text-xl hero-name" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.02em', fontWeight: '700' }}>
+              Anjali
             </p>
+            {/* Small arrow pointing down */}
+            <svg className="w-4 h-4 hero-doodle opacity-60" style={{ '--rotation': '0deg', color: '#E6A6B0' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 50 10 L 50 60" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M 40 50 L 50 65 L 60 50" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </div>
 
-          {/* Main title */}
+          {/* Main title "PORTFOLIO" */}
           <div className="relative">
-            <h1 className="hero-title text-7xl sm:text-8xl md:text-9xl font-black leading-none mb-2" style={{ color: '#8B5A2B', letterSpacing: '-0.02em' }}>
+            <h1 className="hero-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tight mb-4" style={{ color: '#8B5A2B', fontFamily: "'Abril Fatface', serif", letterSpacing: '-0.03em' }}>
               PORTFOLIO
             </h1>
-            
+
             {/* Underline accent */}
-            <div className="flex justify-center mt-6">
-              <div className="h-1 w-32 sm:w-48" style={{ backgroundColor: '#E6A6B0' }}></div>
+            <div className="flex justify-center mt-4 md:mt-6">
+              <div className="h-1.5 w-40 sm:w-48 md:w-56" style={{ backgroundColor: '#E6A6B0' }}></div>
             </div>
           </div>
 
-          {/* Subtitle with soft highlight */}
-          <div className="hero-subtitle relative inline-block">
-            <div className="absolute inset-0 -m-2 opacity-30" style={{ backgroundColor: '#E6A6B0', borderRadius: '8px', transform: 'rotate(-2deg)' }}></div>
-            <p className="relative text-lg sm:text-xl md:text-2xl py-3 px-6" style={{ color: '#8B5A2B', fontFamily: "'Patrick Hand', cursive", fontWeight: '500' }}>
+          {/* Year annotation positioned to the right */}
+          <div className="absolute top-48 md:top-56 right-4 md:right-12 hero-doodle opacity-60" style={{ '--rotation': '5deg' }}>
+            <p className="text-lg md:text-xl font-semibold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0' }}>
+              2026
+            </p>
+          </div>
+
+          {/* Role subtitle with soft highlight background */}
+          <div className="hero-subtitle relative inline-block mt-6 md:mt-8">
+            <div className="absolute inset-0 -m-3 md:-m-4 opacity-25" style={{ backgroundColor: '#E6A6B0', borderRadius: '12px', transform: 'rotate(-1.5deg)' }}></div>
+            <p className="relative text-base sm:text-lg md:text-xl py-3 md:py-4 px-6 md:px-8" style={{ color: '#8B5A2B', fontFamily: "'Patrick Hand', cursive", fontWeight: '500', letterSpacing: '0.01em' }}>
               Data Scientist | AI & ML Engineer
             </p>
           </div>
 
-          {/* Arrow down annotation */}
-          <svg className="w-8 h-8 mx-auto mt-8 hero-doodle opacity-70" style={{ '--rotation': '0deg', color: '#8B5A2B' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 50 20 L 50 70" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            <path d="M 35 55 L 50 70 L 65 55" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          {/* Scroll indicator arrow */}
+          <div className="pt-8 md:pt-12">
+            <svg className="w-6 h-6 md:w-8 md:h-8 mx-auto hero-doodle opacity-60" style={{ '--rotation': '0deg', color: '#8B5A2B' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 50 20 L 50 70" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M 35 55 L 50 75 L 65 55" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
         </div>
       </div>
 
       {/* Mobile responsive adjustments */}
       <style jsx>{`
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
           .hero-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-title {
+            font-size: 2.5rem;
           }
         }
       `}</style>
