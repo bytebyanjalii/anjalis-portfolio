@@ -77,9 +77,11 @@ export default function Resume() {
         <div className="md:col-span-5 space-y-28">
           {/* CONTACT SECTION */}
           <div>
-            <h3 className="text-xs font-bold tracking-widest mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
-              Contact
-            </h3>
+            <div style={{ borderBottom: '2px solid #E6A6B0', paddingBottom: '0.5rem', marginBottom: '1.25rem', opacity: 0.6 }}>
+              <h3 className="text-xs font-bold tracking-widest uppercase" style={{ fontFamily: "'Playfair Display', serif", color: '#E6A6B0', letterSpacing: '0.15em' }}>
+                Contact
+              </h3>
+            </div>
             <div className="space-y-5">
               {contact.map((item, idx) => (
                 <div key={idx} className="text-sm">
@@ -106,9 +108,11 @@ export default function Resume() {
 
           {/* EDUCATION SECTION */}
           <div>
-            <h3 className="text-sm font-black tracking-widest mb-10 uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
-              Education
-            </h3>
+            <div style={{ borderBottom: '2px solid #E6A6B0', paddingBottom: '0.75rem', marginBottom: '2rem', opacity: 0.6 }}>
+              <h3 className="text-sm font-black tracking-widest uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
+                Education
+              </h3>
+            </div>
             <div className="space-y-2">
               <p className="text-base font-bold leading-relaxed" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
                 {education.degree}
@@ -127,9 +131,11 @@ export default function Resume() {
 
           {/* SKILLS SECTION */}
           <div>
-            <h3 className="text-sm font-black tracking-widest mb-10 uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
-              Skills
-            </h3>
+            <div style={{ borderBottom: '2px solid #E6A6B0', paddingBottom: '0.75rem', marginBottom: '2rem', opacity: 0.6 }}>
+              <h3 className="text-sm font-black tracking-widest uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
+                Skills
+              </h3>
+            </div>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill, idx) => (
                 <div
@@ -150,9 +156,11 @@ export default function Resume() {
 
           {/* TOOLS SECTION */}
           <div>
-            <h3 className="text-sm font-black tracking-widest mb-10 uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
-              Tools
-            </h3>
+            <div style={{ borderBottom: '2px solid #E6A6B0', paddingBottom: '0.75rem', marginBottom: '2rem', opacity: 0.6 }}>
+              <h3 className="text-sm font-black tracking-widest uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
+                Tools
+              </h3>
+            </div>
             <div className="grid grid-cols-3 md:grid-cols-3 gap-4">
               {tools.map((tool, idx) => (
                 <div
@@ -186,9 +194,11 @@ export default function Resume() {
 
         {/* RIGHT COLUMN - EXPERIENCE TIMELINE */}
         <div className="md:col-span-5">
-          <h3 className="text-sm font-black tracking-widest mb-16 uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
-            Experience
-          </h3>
+          <div style={{ borderBottom: '2px solid #E6A6B0', paddingBottom: '0.75rem', marginBottom: '3.5rem', opacity: 0.6 }}>
+            <h3 className="text-sm font-black tracking-widest uppercase" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.2em', fontSize: '1.1rem', fontWeight: '700' }}>
+              Experience
+            </h3>
+          </div>
 
           {/* Experience Timeline */}
           <div className="relative space-y-14">

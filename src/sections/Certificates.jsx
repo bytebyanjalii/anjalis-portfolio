@@ -53,9 +53,11 @@ export default function Certificates() {
 
   return (
     <SectionWrapper style={{ backgroundColor: '#F7F3EE' }}>
-      <h2 className="text-5xl md:text-6xl font-black mb-4" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
-        Certificates
-      </h2>
+      <div style={{ borderBottom: '3px solid #E6A6B0', paddingBottom: '0.75rem', marginBottom: '2rem', opacity: 0.8 }}>
+        <h2 className="text-5xl md:text-6xl font-black" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
+          Certificates
+        </h2>
+      </div>
       <p className="mb-12 text-base" style={{ color: '#4a4a4a' }}>
         Professional credentials and certifications earned through courses and internships
       </p>

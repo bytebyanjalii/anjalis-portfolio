@@ -6,9 +6,11 @@ export default function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         {/* Text Section */}
         <div className="space-y-6">
-          <h2 className="text-5xl md:text-6xl font-black" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
-            About Me
-          </h2>
+          <div style={{ borderBottom: '3px solid #E6A6B0', paddingBottom: '0.75rem', marginBottom: '1.5rem', opacity: 0.8 }}>
+            <h2 className="text-5xl md:text-6xl font-black" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
+              About Me
+            </h2>
+          </div>
           <p className="text-gray-700 text-base leading-relaxed" style={{ color: '#4a4a4a' }}>
             I'm a passionate data scientist and AI engineer with a deep interest in machine learning, 
             deep learning, and their real-world applications. With expertise in building end-to-end 
