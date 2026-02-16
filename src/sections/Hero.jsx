@@ -50,7 +50,7 @@ export default function Hero() {
         <div className="text-center space-y-6 md:space-y-8">
           {/* Handwritten "Anjali" annotation with arrow */}
           <div className="relative flex flex-col items-center gap-2 mb-4">
-            <p className="text-lg md:text-xl hero-name" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.02em', fontWeight: '700' }}>
+            <p className="text-2xl md:text-3xl hero-name animate-float-slow" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.02em', fontWeight: '700' }}>
               Anjali
             </p>
             {/* Small arrow pointing down */}
@@ -59,6 +59,12 @@ export default function Hero() {
               <path d="M 40 50 L 50 65 L 60 50" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
+
+          {/* Curved arrow from PORTFOLIO to Anjali */}
+          <svg className="absolute w-32 md:w-40 h-32 md:h-40 left-1/2 transform -translate-x-1/2 pointer-events-none" style={{ top: '140px', opacity: 0.5 }} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 100 10 Q 130 50 120 100" stroke="#E6A6B0" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+            <path d="M 125 90 L 120 100 L 115 92" stroke="#E6A6B0" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          </svg>
 
           {/* Main title "PORTFOLIO" */}
           <div className="relative">
@@ -73,8 +79,8 @@ export default function Hero() {
           </div>
 
           {/* Year annotation positioned to the right */}
-          <div className="absolute top-48 md:top-56 right-4 md:right-12 hero-doodle opacity-60" style={{ '--rotation': '5deg' }}>
-            <p className="text-lg md:text-xl font-semibold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0' }}>
+          <div className="absolute top-48 md:top-56 right-4 md:right-12 animate-float-fast opacity-60" style={{ '--rotation': '5deg' }}>
+            <p className="text-2xl md:text-3xl font-semibold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0' }}>
               2026
             </p>
           </div>
@@ -108,6 +114,33 @@ export default function Hero() {
           .hero-title {
             font-size: 2.5rem;
           }
+        }
+
+        /* Floating animations */
+        @keyframes floatSlow {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+
+        @keyframes floatFast {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
+        }
+
+        .animate-float-slow {
+          animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        .animate-float-fast {
+          animation: floatFast 4s ease-in-out infinite;
         }
       `}</style>
     </section>
