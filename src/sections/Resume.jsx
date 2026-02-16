@@ -218,7 +218,7 @@ export default function Resume() {
                 <div
                   className="absolute w-4 h-4 rounded-full border-2"
                   style={{
-                    left: '48px',
+                    left: '0',
                     top: '0',
                     backgroundColor: '#F7F3EE',
                     borderColor: '#E6A6B0',
