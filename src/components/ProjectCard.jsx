@@ -6,11 +6,11 @@ export default function ProjectCard({
   githubLink 
 }) {
   return (
-    <div className="flex-shrink-0 w-80 rounded-lg overflow-hidden soft-shadow hover-lift project-card" style={{ backgroundColor: '#F7F3EE' }}>
+    <div className="flex-shrink-0 w-80 rounded-lg overflow-hidden soft-shadow hover-lift" style={{ backgroundColor: '#F7F3EE' }}>
       {/* Image placeholder */}
       <div className="w-full h-48 flex items-center justify-center" style={{ backgroundColor: 'rgba(230, 166, 176, 0.2)' }}>
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover project-image" />
+          <img src={image} alt={title} className="w-full h-full object-cover" />
         ) : (
           <div className="text-center">
             <p className="text-sm" style={{ color: '#8B5A2B' }}>Project Image</p>
