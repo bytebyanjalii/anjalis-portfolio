@@ -191,26 +191,27 @@ export default function Resume() {
           </h3>
 
           {/* Experience Timeline */}
-          <div className="relative space-y-16">
+          <div className="relative space-y-14">
             {/* Timeline line (visible on mobile below title) */}
             <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5" style={{ backgroundColor: '#E6A6B0', opacity: 0.3 }}></div>
 
             {experiences.map((exp, idx) => (
-              <div key={idx} className="relative">
-                {/* Timeline dot - larger and more prominent */}
+              <div key={idx} className="relative md:-ml-12">
+                {/* Timeline dot - anchored to center timeline */}
                 <div
-                  className="absolute w-4 h-4 rounded-full border-2 transform -translate-x-1/2"
+                  className="absolute w-4 h-4 rounded-full border-2"
                   style={{
-                    left: '-2px',
-                    top: '2px',
+                    left: '48px',
+                    top: '0',
                     backgroundColor: '#F7F3EE',
                     borderColor: '#E6A6B0',
                     boxShadow: '0 0 0 3px #F7F3EE, 0 0 0 4px #E6A6B0',
+                    transform: 'translateX(-50%)',
                   }}
                 ></div>
 
                 {/* Experience Content */}
-                <div className="md:ml-0 ml-8">
+                <div className="md:ml-12 ml-8">
                   {/* Duration (muted, subtle styling) */}
                   <p className="text-xs tracking-wide font-bold uppercase" style={{ color: '#E6A6B0', opacity: 0.65, letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                     {exp.duration}
@@ -238,11 +239,6 @@ export default function Resume() {
                     ))}
                   </ul>
                 </div>
-
-                {/* Divider between experiences - more subtle */}
-                {idx < experiences.length - 1 && (
-                  <div className="mt-16 pt-16 border-t" style={{ borderColor: '#E6A6B0', opacity: 0.2 }}></div>
-                )}
               </div>
             ))}
           </div>
