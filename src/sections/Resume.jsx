@@ -201,68 +201,83 @@ export default function Resume() {
           </div>
 
           {/* Experience Timeline */}
-          <div className="relative space-y-14">
-            {/* Timeline line (visible on mobile below title) */}
+          <div className="relative">
+            {/* Desktop timeline line - spans full height */}
+            <div
+              className="hidden md:block absolute bottom-0"
+              style={{
+                left: '48px',
+                top: '0',
+                width: '1px',
+                backgroundColor: '#E6A6B0',
+                opacity: 0.35,
+                transform: 'translateX(-50%)',
+              }}
+            ></div>
+
+            {/* Mobile timeline line */}
             <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5" style={{ backgroundColor: '#E6A6B0', opacity: 0.3 }}></div>
 
-            {experiences.map((exp, idx) => (
-              <div key={idx} className="relative md:-ml-12">
-                {/* Timeline date - positioned on the center line to the left */}
-                <div
-                  className="absolute text-xs tracking-wide font-bold uppercase md:block hidden"
-                  style={{
-                    left: '-64px',
-                    top: '0',
-                    color: '#E6A6B0',
-                    opacity: 0.65,
-                    letterSpacing: '0.08em',
-                    textAlign: 'right',
-                    width: '56px',
-                    lineHeight: '1.2',
-                  }}
-                >
-                  {exp.duration}
+            <div className="space-y-14">
+              {experiences.map((exp, idx) => (
+                <div key={idx} className="relative">
+                  {/* Timeline date - positioned left on desktop */}
+                  <div
+                    className="hidden md:block absolute text-xs tracking-wide font-bold uppercase"
+                    style={{
+                      right: 'calc(100% + 16px)',
+                      top: '2px',
+                      color: '#E6A6B0',
+                      opacity: 0.65,
+                      letterSpacing: '0.08em',
+                      textAlign: 'right',
+                      width: '56px',
+                      lineHeight: '1.2',
+                    }}
+                  >
+                    {exp.duration}
+                  </div>
+
+                  {/* Timeline dot - fixed position on center line */}
+                  <div
+                    className="absolute w-4 h-4 rounded-full border-2 md:block hidden"
+                    style={{
+                      left: '48px',
+                      top: '2px',
+                      backgroundColor: '#F7F3EE',
+                      borderColor: '#E6A6B0',
+                      boxShadow: '0 0 0 3px #F7F3EE, 0 0 0 4px #E6A6B0',
+                      transform: 'translateX(-50%)',
+                    }}
+                  ></div>
+
+                  {/* Experience Content */}
+                  <div className="md:ml-20 ml-8">
+                    {/* Role Title - BOLD and prominent */}
+                    <p className="text-lg font-bold mb-1 leading-tight" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
+                      {exp.title}
+                    </p>
+
+                    {/* Organization - lighter and smaller */}
+                    <p className="text-sm mb-5" style={{ color: '#4a4a4a', opacity: 0.75 }}>
+                      {exp.organization}
+                    </p>
+
+                    {/* Bullet Points - improved spacing */}
+                    <ul className="space-y-3">
+                      {exp.bullets.map((bullet, bidx) => (
+                        <li key={bidx} className="flex gap-3 text-sm leading-relaxed" style={{ color: '#4a4a4a' }}>
+                          <span className="flex-shrink-0 mt-1" style={{ color: '#E6A6B0', fontWeight: 'bold' }}>
+                            —
+                          </span>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-
-                {/* Timeline dot - anchored to center timeline */}
-                <div
-                  className="absolute w-4 h-4 rounded-full border-2"
-                  style={{
-                    left: '0',
-                    top: '0',
-                    backgroundColor: '#F7F3EE',
-                    borderColor: '#E6A6B0',
-                    boxShadow: '0 0 0 3px #F7F3EE, 0 0 0 4px #E6A6B0',
-                    transform: 'translateX(-50%)',
-                  }}
-                ></div>
-
-                {/* Experience Content */}
-                <div className="md:ml-12 ml-8">
-                  {/* Role Title - BOLD and prominent */}
-                  <p className="text-lg font-bold mb-1 leading-tight" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
-                    {exp.title}
-                  </p>
-
-                  {/* Organization - lighter and smaller */}
-                  <p className="text-sm mb-5" style={{ color: '#4a4a4a', opacity: 0.75 }}>
-                    {exp.organization}
-                  </p>
-
-                  {/* Bullet Points - improved spacing */}
-                  <ul className="space-y-3">
-                    {exp.bullets.map((bullet, bidx) => (
-                      <li key={bidx} className="flex gap-3 text-sm leading-relaxed" style={{ color: '#4a4a4a' }}>
-                        <span className="flex-shrink-0 mt-1" style={{ color: '#E6A6B0', fontWeight: 'bold' }}>
-                          —
-                        </span>
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
