@@ -197,6 +197,23 @@ export default function Resume() {
 
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative md:-ml-12">
+                {/* Timeline date - positioned on the center line to the left */}
+                <div
+                  className="absolute text-xs tracking-wide font-bold uppercase md:block hidden"
+                  style={{
+                    left: '-64px',
+                    top: '0',
+                    color: '#E6A6B0',
+                    opacity: 0.65,
+                    letterSpacing: '0.08em',
+                    textAlign: 'right',
+                    width: '56px',
+                    lineHeight: '1.2',
+                  }}
+                >
+                  {exp.duration}
+                </div>
+
                 {/* Timeline dot - anchored to center timeline */}
                 <div
                   className="absolute w-4 h-4 rounded-full border-2"
@@ -212,11 +229,6 @@ export default function Resume() {
 
                 {/* Experience Content */}
                 <div className="md:ml-12 ml-8">
-                  {/* Duration (muted, subtle styling) */}
-                  <p className="text-xs tracking-wide font-bold uppercase" style={{ color: '#E6A6B0', opacity: 0.65, letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
-                    {exp.duration}
-                  </p>
-
                   {/* Role Title - BOLD and prominent */}
                   <p className="text-lg font-bold mb-1 leading-tight" style={{ color: '#8B5A2B', fontFamily: "'Playfair Display', serif" }}>
                     {exp.title}
