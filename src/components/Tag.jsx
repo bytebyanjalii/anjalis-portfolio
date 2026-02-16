@@ -7,7 +7,7 @@ export default function Tag({ children, variant = 'default' }) {
   }
 
   return (
-    <span className="px-4 py-2 rounded-full text-sm font-medium transition-smooth hover:scale-105" style={variants[variant]}>
+    <span className="px-4 py-2 rounded-full text-sm font-medium transition-smooth hover:scale-105 skill-item" style={variants[variant]}>
       {children}
     </span>
   )

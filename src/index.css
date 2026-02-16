@@ -137,6 +137,57 @@ p {
   opacity: 0;
 }
 
+/* Minimal editorial animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Underline reveal */
+@keyframes underlineExpand {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Timeline draw (scaleY from 0 -> 1) */
+@keyframes drawTimeline {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* Soft float for handwritten annotations */
+@keyframes floatSoft {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Utility classes for initial state */
+.animate-section { opacity: 0; transform: translateY(12px); transition: opacity 360ms ease, transform 360ms ease; }
+.in-view .animate-section { animation: fadeUp 560ms cubic-bezier(.2,.8,.2,1) forwards; }
+
+.reveal-underline { position: relative; overflow: visible; }
+.reveal-underline::after { content: '' ; position: absolute; left: 0; bottom: -6px; height: 4px; background: rgba(230,166,176,0.22); width: 0%; transform-origin: left center; }
+.in-view .reveal-underline::after { animation: underlineExpand 520ms ease forwards; }
+
+/* Timeline styles */
+.timeline-line { position: absolute; left: 48px; top: 0; bottom: 0; width: 1px; transform-origin: top; }
+.timeline-line .timeline-fill { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #E6A6B0; opacity: 0.35; transform: scaleY(0); transform-origin: top; }
+.in-view .timeline-line .timeline-fill { animation: drawTimeline 900ms ease forwards; }
+
+.timeline-dot { transition: transform 360ms ease, opacity 360ms ease; opacity: 0; transform: translateY(6px) scale(0.95); }
+.in-view .timeline-dot { opacity: 1; transform: translateY(0) scale(1); }
+
+/* Handwritten soft float */
+.float-soft { animation: floatSoft 8s ease-in-out infinite; }
+
+/* Skill stagger */
+.skill-item { opacity: 0; transform: translateY(8px); transition: opacity 420ms ease, transform 420ms ease; }
+.in-view .skill-item { opacity: 1; transform: translateY(0); }
+
+/* Project image lift */
+.project-image { transition: transform 280ms ease, box-shadow 280ms ease; }
+.project-card:hover .project-image { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(0,0,0,0.06); }
+
 .hero-name {
   animation: fadeIn 1.2s ease-out forwards;
   animation-delay: 0.4s;

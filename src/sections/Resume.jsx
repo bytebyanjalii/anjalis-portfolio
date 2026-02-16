@@ -203,17 +203,9 @@ export default function Resume() {
           {/* Experience Timeline */}
           <div className="relative">
             {/* Desktop timeline line - spans full height */}
-            <div
-              className="hidden md:block absolute bottom-0"
-              style={{
-                left: '48px',
-                top: '0',
-                width: '1px',
-                backgroundColor: '#E6A6B0',
-                opacity: 0.35,
-                transform: 'translateX(-50%)',
-              }}
-            ></div>
+            <div className="timeline-line hidden md:block absolute bottom-0" style={{ left: '48px', top: '0', width: '1px', transform: 'translateX(-50%)' }}>
+              <div className="timeline-fill"></div>
+            </div>
 
             {/* Mobile timeline line */}
             <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5" style={{ backgroundColor: '#E6A6B0', opacity: 0.3 }}></div>
@@ -240,7 +232,7 @@ export default function Resume() {
 
                   {/* Timeline dot - fixed position on center line */}
                   <div
-                    className="absolute w-4 h-4 rounded-full border-2 md:block hidden"
+                    className="absolute w-4 h-4 rounded-full border-2 timeline-dot md:block hidden"
                     style={{
                       left: '48px',
                       top: '2px',
