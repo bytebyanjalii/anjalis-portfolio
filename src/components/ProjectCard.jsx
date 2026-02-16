@@ -1,4 +1,5 @@
 import Reveal from './Reveal'
+import { motion } from 'framer-motion'
 
 export default function ProjectCard({ 
   title, 
@@ -9,7 +10,10 @@ export default function ProjectCard({
 }) {
   return (
     <Reveal>
-      <div className="flex-shrink-0 w-80 rounded-lg overflow-hidden soft-shadow hover-lift project-card" style={{ backgroundColor: '#F7F3EE' }}>
+      <motion.div className="flex-shrink-0 w-80 rounded-lg overflow-hidden soft-shadow project-card" style={{ backgroundColor: '#F7F3EE' }}
+        whileHover={{ scale: 1.03, boxShadow: '0 18px 30px rgba(0,0,0,0.08)' }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+      >
       {/* Image placeholder */}
       <div className="w-full h-48 flex items-center justify-center" style={{ backgroundColor: 'rgba(230, 166, 176, 0.2)' }}>
         {image ? (
@@ -50,7 +54,7 @@ export default function ProjectCard({
           </a>
         )}
       </div>
-      </div>
+      </motion.div>
     </Reveal>
   )
 }

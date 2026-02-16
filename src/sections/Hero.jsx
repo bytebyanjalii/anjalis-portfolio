@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 overflow-hidden" style={{ backgroundColor: '#F7F3EE' }}>
+    <section className="hero relative min-h-screen flex items-center justify-center px-6 md:px-12 overflow-hidden" style={{ backgroundColor: '#F7F3EE' }}>
       {/* Background subtle noise texture */}
       <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" /%3E%3C/filter%3E%3Crect width="400" height="400" fill="white" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E")',
@@ -11,39 +11,45 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl w-full">
         {/* --- DECORATIVE DOODLES --- */}
 
-        {/* Top-left circle doodle */}
+        {/* Top-left circle doodle (draw-on stroke) */}
         <svg className="absolute -top-12 -left-8 w-20 h-20 text-rose-200 hero-doodle opacity-40" style={{ '--rotation': '-12deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" opacity="0.6" />
-          <circle cx="50" cy="50" r="32" stroke="currentColor" strokeWidth="1" opacity="0.4" />
-          <circle cx="50" cy="50" r="24" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+          <circle className="doodle-stroke" cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" opacity="0.6" />
+          <circle className="doodle-stroke" cx="50" cy="50" r="32" stroke="currentColor" strokeWidth="1" opacity="0.45" style={{ animationDelay: '0.15s' }} />
+          <circle className="doodle-stroke" cx="50" cy="50" r="24" stroke="currentColor" strokeWidth="1" opacity="0.35" style={{ animationDelay: '0.3s' }} />
         </svg>
 
-        {/* Top-right stars cluster */}
+        {/* Top-right stars cluster (subtle outline draw + fill) */}
         <svg className="absolute -top-6 right-0 md:right-8 w-24 h-24 text-amber-100 hero-doodle opacity-50" style={{ '--rotation': '8deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Star 1 */}
-          <path d="M 30 20 L 35 35 L 50 35 L 38 45 L 43 60 L 30 50 L 17 60 L 22 45 L 10 35 L 25 35 Z" fill="currentColor" opacity="0.5" />
-          {/* Star 2 */}
-          <path d="M 70 15 L 73 25 L 85 25 L 75 32 L 78 42 L 70 35 L 62 42 L 65 32 L 55 25 L 67 25 Z" fill="currentColor" opacity="0.4" />
-          {/* Star 3 */}
-          <path d="M 60 50 L 62 57 L 70 57 L 63 62 L 65 69 L 60 64 L 55 69 L 57 62 L 50 57 L 58 57 Z" fill="currentColor" opacity="0.35" />
+          {/* Star 1 fill */}
+          <path className="doodle-fill" d="M 30 20 L 35 35 L 50 35 L 38 45 L 43 60 L 30 50 L 17 60 L 22 45 L 10 35 L 25 35 Z" fill="currentColor" opacity="0.45" />
+          {/* Star 1 outline for draw effect */}
+          <path className="doodle-stroke" d="M 30 20 L 35 35 L 50 35 L 38 45 L 43 60 L 30 50 L 17 60 L 22 45 L 10 35 L 25 35 Z" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.7" style={{ animationDelay: '0.12s' }} />
+
+          {/* Star 2 fill */}
+          <path className="doodle-fill" d="M 70 15 L 73 25 L 85 25 L 75 32 L 78 42 L 70 35 L 62 42 L 65 32 L 55 25 L 67 25 Z" fill="currentColor" opacity="0.36" />
+          <path className="doodle-stroke" d="M 70 15 L 73 25 L 85 25 L 75 32 L 78 42 L 70 35 L 62 42 L 65 32 L 55 25 L 67 25 Z" stroke="currentColor" strokeWidth="0.7" fill="none" opacity="0.65" style={{ animationDelay: '0.2s' }} />
+
+          {/* Star 3 fill */}
+          <path className="doodle-fill" d="M 60 50 L 62 57 L 70 57 L 63 62 L 65 69 L 60 64 L 55 69 L 57 62 L 50 57 L 58 57 Z" fill="currentColor" opacity="0.33" />
+          <path className="doodle-stroke" d="M 60 50 L 62 57 L 70 57 L 63 62 L 65 69 L 60 64 L 55 69 L 57 62 L 50 57 L 58 57 Z" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.6" style={{ animationDelay: '0.28s' }} />
         </svg>
 
-        {/* Bottom-left sparkles */}
+        {/* Bottom-left sparkles (draw + subtle float) */}
         <svg className="absolute -bottom-16 -left-12 w-28 h-28 text-rose-100 hero-doodle opacity-40" style={{ '--rotation': '-18deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Sparkle 1 */}
-          <circle cx="25" cy="30" r="2" fill="currentColor" />
-          <path d="M 25 22 L 25 38" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-          <path d="M 17 30 L 33 30" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+          <circle className="doodle-stroke" cx="25" cy="30" r="2" stroke="currentColor" strokeWidth="0.8" fill="none" />
+          <path className="doodle-stroke" d="M 25 22 L 25 38" stroke="currentColor" strokeWidth="0.9" opacity="0.6" />
+          <path className="doodle-stroke" d="M 17 30 L 33 30" stroke="currentColor" strokeWidth="0.9" opacity="0.6" />
           {/* Sparkle 2 */}
-          <circle cx="70" cy="60" r="2" fill="currentColor" />
-          <path d="M 70 54 L 70 66" stroke="currentColor" strokeWidth="1" opacity="0.4" />
-          <path d="M 64 60 L 76 60" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+          <circle className="doodle-stroke" cx="70" cy="60" r="2" stroke="currentColor" strokeWidth="0.8" fill="none" />
+          <path className="doodle-stroke" d="M 70 54 L 70 66" stroke="currentColor" strokeWidth="0.9" opacity="0.5" />
+          <path className="doodle-stroke" d="M 64 60 L 76 60" stroke="currentColor" strokeWidth="0.9" opacity="0.5" />
         </svg>
 
-        {/* Bottom-right curved arrow */}
+        {/* Bottom-right curved arrow (draw-on) */}
         <svg className="absolute bottom-0 -right-4 md:right-12 w-20 h-20 text-amber-100 hero-doodle opacity-45" style={{ '--rotation': '15deg' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 20 70 Q 40 30 70 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
-          <path d="M 65 10 L 70 20 L 60 25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          <path className="doodle-stroke" d="M 20 70 Q 40 30 70 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+          <path className="doodle-stroke" d="M 65 10 L 70 20 L 60 25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" style={{ animationDelay: '0.4s' }} />
         </svg>
 
         {/* --- CENTERED CONTENT --- */}
@@ -128,6 +134,48 @@ export default function Hero() {
 
         .animate-float-year {
           animation: floatYear 8s ease-in-out infinite 0.3s;
+        }
+
+        /* Doodle draw-on stroke animation (subtle, slow) */
+        .doodle-stroke {
+          stroke-dasharray: 300;
+          stroke-dashoffset: 300;
+          transition: opacity 0.3s ease;
+          animation: doodleDraw 1.6s ease forwards;
+          transform-origin: center;
+        }
+
+        .doodle-fill {
+          /* keep fills subtle */
+          opacity: 0.35;
+        }
+
+        @keyframes doodleDraw {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        /* Gentle floating for doodles as a group */
+        @keyframes doodleFloat {
+          0%,100% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
+          50% { transform: translateY(-4px) rotate(var(--rotation, 0deg)); }
+        }
+
+        .hero-doodle {
+          animation: doodleFloat 9s ease-in-out infinite;
+          will-change: transform, opacity;
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          .animate-float-name, .animate-float-year, .hero-doodle, .doodle-stroke {
+            animation: none !important;
+            transition: none !important;
+          }
+          .doodle-stroke {
+            stroke-dashoffset: 0;
+          }
         }
       `}</style>
     </section>

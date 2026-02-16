@@ -1,5 +1,6 @@
 import SectionWrapper from '../components/SectionWrapper'
 import Reveal from '../components/Reveal'
+import { motion } from 'framer-motion'
 
 export default function Certificates() {
   const certificateGroups = [
@@ -59,8 +60,8 @@ export default function Certificates() {
           <h2 className="text-5xl md:text-6xl font-black" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
             Certificates
           </h2>
-        </div>
-      </Reveal>
+                    </div>
+                  </Reveal>
       <p className="mb-12 text-base" style={{ color: '#4a4a4a' }}>
         Professional credentials and certifications earned through courses and internships
       </p>
@@ -80,20 +81,11 @@ export default function Certificates() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {group.certificates.map((cert, certIdx) => (
                 <Reveal key={certIdx}>
-                  <div
-                    className="cursor-pointer rounded-lg overflow-hidden soft-shadow transition-smooth"
-                    style={{
-                      transform: 'scale(1)',
-                      transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'scale(1.05)'
-                      e.currentTarget.style.boxShadow = '0 12px 24px rgba(139, 90, 43, 0.2)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'scale(1)'
-                      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)'
-                    }}
+                  <motion.div
+                    className="certificate-card rounded-lg overflow-hidden soft-shadow"
+                    style={{ cursor: 'pointer' }}
+                    whileHover={{ scale: 1.03, boxShadow: '0 18px 30px rgba(139,90,43,0.14)' }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
                     onClick={() => handleCertificateClick(cert.image)}
                   >
                     {/* Certificate Image */}
@@ -111,7 +103,7 @@ export default function Certificates() {
                         {cert.title}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </Reveal>
               ))}
             </div>
