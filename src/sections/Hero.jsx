@@ -48,17 +48,17 @@ export default function Hero() {
 
         {/* --- CENTERED CONTENT --- */}
         <div className="relative text-center">
-          {/* Handwritten "Anjali" annotation - positioned near top-left of PORTFOLIO */}
-          <div className="absolute top-12 left-4 md:left-16 animate-float-name" style={{}}>
-            <p className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.02em', transform: 'rotate(-3deg)' }}>
+          {/* Handwritten "Anjali" annotation - positioned directly above PORTFOLIO, left-of-center */}
+          <div className="absolute animate-float-name" style={{ top: '-24px', left: 'calc(50% - 60px)', transform: 'rotate(-3deg)' }}>
+            <p className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "'Caveat', cursive", color: '#E6A6B0', letterSpacing: '0.02em' }}>
               Anjali
             </p>
           </div>
 
-          {/* Small curved arrow from Anjali to PORTFOLIO */}
-          <svg className="absolute top-32 left-12 md:left-32 w-28 md:w-40 h-24 pointer-events-none" style={{ opacity: 0.7 }} viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 20 10 Q 50 60 110 100" stroke="#E6A6B0" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-            <path d="M 105 95 L 110 105 L 100 105" stroke="#E6A6B0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          {/* Small curved arrow from Anjali downward toward PORTFOLIO */}
+          <svg className="absolute w-32 md:w-40 h-20 pointer-events-none" style={{ top: '0px', left: 'calc(50% - 64px)', opacity: 0.7 }} viewBox="0 0 150 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 70 10 Q 65 40 70 90" stroke="#E6A6B0" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+            <path d="M 68 85 L 70 100 L 72 85" stroke="#E6A6B0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
           </svg>
 
           {/* Main title "PORTFOLIO" */}
@@ -109,7 +109,7 @@ export default function Hero() {
             transform: translateY(0px) rotate(-3deg);
           }
           50% {
-            transform: translateY(-4px) rotate(-3deg);
+            transform: translateY(-3px) rotate(-3deg);
           }
         }
 
@@ -123,7 +123,7 @@ export default function Hero() {
         }
 
         .animate-float-name {
-          animation: floatName 7s ease-in-out infinite;
+          animation: floatName 8s ease-in-out infinite;
         }
 
         .animate-float-year {
