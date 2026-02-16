@@ -1,4 +1,5 @@
 import SectionWrapper from '../components/SectionWrapper'
+import Reveal from '../components/Reveal'
 
 export default function Resume() {
   const contact = [
@@ -220,7 +221,7 @@ export default function Resume() {
 
             <div className="space-y-14">
               {experiences.map((exp, idx) => (
-                <div key={idx} className="relative">
+                <Reveal key={idx} className="relative">
                   {/* Timeline date - positioned left on desktop */}
                   <div
                     className="hidden md:block absolute text-xs tracking-wide font-bold uppercase"
@@ -275,7 +276,7 @@ export default function Resume() {
                       ))}
                     </ul>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>

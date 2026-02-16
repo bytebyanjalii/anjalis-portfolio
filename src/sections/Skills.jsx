@@ -1,5 +1,6 @@
 import SectionWrapper from '../components/SectionWrapper'
 import Tag from '../components/Tag'
+import Reveal from '../components/Reveal'
 
 export default function Skills() {
   const skillGroups = {
@@ -60,11 +61,13 @@ export default function Skills() {
 
   return (
     <SectionWrapper className="bg-stone-50" style={{ backgroundColor: '#F7F3EE' }}>
-      <div style={{ borderBottom: '3px solid #E6A6B0', paddingBottom: '0.75rem', marginBottom: '2rem', opacity: 0.8 }}>
-        <h2 className="text-5xl md:text-6xl font-black" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
-          Technical Skills
-        </h2>
-      </div>
+      <Reveal>
+        <div style={{ borderBottom: '3px solid #E6A6B0', paddingBottom: '0.75rem', marginBottom: '2rem', opacity: 0.8 }}>
+          <h2 className="text-5xl md:text-6xl font-black" style={{ fontFamily: "'Abril Fatface', serif", color: '#8B5A2B' }}>
+            Technical Skills
+          </h2>
+        </div>
+      </Reveal>
       <p className="mb-12 text-base" style={{ color: '#4a4a4a' }}>
         My comprehensive Data Science, AI & ML expertise
       </p>

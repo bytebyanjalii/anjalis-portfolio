@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 export default function ProjectCard({ 
   title, 
   description, 
@@ -6,7 +8,8 @@ export default function ProjectCard({
   githubLink 
 }) {
   return (
-    <div className="flex-shrink-0 w-80 rounded-lg overflow-hidden soft-shadow hover-lift" style={{ backgroundColor: '#F7F3EE' }}>
+    <Reveal>
+      <div className="flex-shrink-0 w-80 rounded-lg overflow-hidden soft-shadow hover-lift project-card" style={{ backgroundColor: '#F7F3EE' }}>
       {/* Image placeholder */}
       <div className="w-full h-48 flex items-center justify-center" style={{ backgroundColor: 'rgba(230, 166, 176, 0.2)' }}>
         {image ? (
@@ -47,6 +50,7 @@ export default function ProjectCard({
           </a>
         )}
       </div>
-    </div>
+      </div>
+    </Reveal>
   )
 }
