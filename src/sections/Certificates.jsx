@@ -30,7 +30,7 @@ export default function Certificates() {
         },
         {
           title: 'Oracle Cloud Infrastructure – AI Foundations Associate (2025)',
-          image: '/Images/certificates/Oracle Cloud Infrastructure – AI Foundations Associate (2025).jpg',
+          image: '/Images/certificates/Oracle_Cloud_Infrastructure_AI_Foundations_Associate_2025.jpg',
         },
       ],
     },
