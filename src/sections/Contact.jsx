@@ -18,7 +18,7 @@ export default function Contact() {
 
         <div className="flex flex-col md:flex-row justify-center gap-8 pt-8">
           <a
-            href="mailto:bytebyanjali@gmail.com"
+            href="mailto:anjaliikashyap.25@gmail.com"
             className="px-8 py-3 rounded-lg font-medium transition-smooth" style={{ backgroundColor: '#8B5A2B', color: 'white' }}
           >
             Email Me
