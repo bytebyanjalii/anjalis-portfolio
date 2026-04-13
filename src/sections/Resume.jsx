@@ -5,7 +5,7 @@ export default function Resume() {
   const contact = [
     { label: 'Date of Birth', value: '25 October 2004' },
     { label: 'Phone', value: '+91 9911368800' },
-    { label: 'Email', value: 'bytebyanjali@gmail.com', href: 'mailto:bytebyanjali@gmail.com' },
+    { label: 'Email', value: 'anjaliikashyap.25@gmail.com', href: 'mailto:anjaliikashyap.25@gmail.com' },
     { label: 'LinkedIn', value: 'anjali-776524312', href: 'https://www.linkedin.com/in/anjali-776524312/' },
     { label: 'GitHub', value: 'bytebyanjalii', href: 'https://github.com/bytebyanjalii' },
   ]
